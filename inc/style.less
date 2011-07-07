@@ -1,0 +1,94 @@
+@red: #ff0000;
+@black: #000;
+
+#helpmejs_mask {
+	position:absolute; top:0; left:0;
+	background-color:fadeout(@red, 90%);
+
+	.tag {
+		position:absolute;
+
+		.label {
+			position:relative;
+			background-color:yellow; color:black;
+			border:1px solid black;
+			padding:0 5px;
+			cursor:pointer;
+
+			.rc(10px, 10px, 10px, 10px);
+		}
+
+		.tooltip {
+			position:absolute;
+			background-color:fadeout(@black, 15%); color:#fff;
+			display:none;
+			width:300px; padding:7px;
+
+			.rc(5px, 5px, 5px, 5px);
+
+			.ua {
+				width:0; height:0;
+				border:10px solid transparent;
+				border-bottom:10px solid fadeout(@black, 15%);
+				position:absolute; left:10px; top:-20px;
+			}
+
+			.da {
+				width:0; height:0;
+				border:10px solid transparent;
+				border-top:10px solid fadeout(@black, 15%);
+				position:absolute; right:10px; bottom:-20px;
+			}
+
+			&.top {
+				bottom: 30px;
+				right: -10px;
+
+				.ua {
+					display:none;
+				}
+			}
+
+			&.bottom {
+				left:-10px; top:30px;
+
+				.da {
+					display:none;
+				}
+			}
+		}
+
+		&:hover .tooltip {
+			display:block;
+		}
+	}
+
+
+	/** miscellaneous styles */
+
+	.rc(@tl:3, @tr:3, @br:3, @bl:3px) {
+		-webkit-border-top-left-radius: @tl;
+		-webkit-border-top-right-radius: @tr;
+		-webkit-border-bottom-right-radius: @br;
+		-webkit-border-bottom-left-radius: @bl;
+		-moz-border-radius-topleft: @tl;
+		-moz-border-radius-topright: @tr;
+		-moz-border-radius-bottomright: @br;
+		-moz-border-radius-bottomleft: @bl;
+		border-top-left-radius: @tl;
+		border-top-right-radius: @tr;
+		border-bottom-right-radius: @br;
+		border-bottom-left-radius: @bl;
+	}
+
+	.gradient(@start, @end) {
+		background-color:@start;
+		background: -webkit-gradient(linear, center top, center bottom, from(@start), to(@end)); /* webkit */
+		background: -moz-linear-gradient(top,  @start,  @end); /* firefox */	
+	}
+
+	.clear {
+		clear:both;
+	}
+
+}
