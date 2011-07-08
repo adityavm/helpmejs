@@ -2,7 +2,7 @@
 
 This is a framework/jQuery plug-in to help designers/developers add visual hints/help which explains elements on a page. It does this by reading from a help file, placing a (?) right next to each element you want to show help for, then showing a tooltip when the user hovers over that tag.
 
-[![](http://cl.ly/3h3q0u3e1p0Y0H3j3e3Y)](http://cl.ly/3h3q0u3e1p0Y0H3j3e3Y)
+[Example](http://cl.ly/3h3q0u3e1p0Y0H3j3e3Y)
 
 The help file is a JSON file in the following form:
 
