@@ -12,6 +12,10 @@ $.helpme = {
 		* 		...
 		* 	}
 		*/
+		debug = (debug != undefined) ? true : false;
+		if(!debug){
+			console = {log: function(){}, group: function(){}, groupEnd: function(){}}
+		}
 		
 		if($.helpme.options.ran){//has already been run, just show the mask
 			$("#helpmejs_mask").show();
@@ -42,10 +46,11 @@ $.helpme = {
 			//build and append tags
 			$.each(_data, function(i,v){
 				var ele = $(i);
-					if(!ele.length)
-						return;//if some idiot added a tooltip for a selector that doesn't exist
-				var ele_x = ele.get(0).offsetLeft;
-				var ele_y = ele.get(0).offsetTop;
+					if(!ele.length || !ele.is(":visible"))
+						return;//if some idiot added a tooltip for a selector that doesn't exist or element is hidden
+
+				var ele_x = ele.offset().left; //
+				var ele_y = ele.offset().top; //I <3 jQuery
 				var ele_w = ele.get(0).offsetWidth;
 				var ele_h = ele.get(0).offsetHeight;
 
@@ -102,12 +107,6 @@ $.helpme = {
 			});
 
 			$.helpme.options.ran = 1;
-		}
-
-
-		debug = (debug != 'undefined') ? true : false;
-		if(!debug){
-			console = {log: function(){}, group: function(){}, groupEnd: function(){}}
 		}
 	},
 	hide: function(){

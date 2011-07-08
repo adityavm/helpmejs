@@ -9,7 +9,8 @@
 	<script src="inc/helpme.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function(){
-			$.helpme('helpmedata.json', 1);
+			$("#hm").click(function(){ $.helpme.init("helpmedata.json"); $(this).hide(); $("#hh").show(); });
+			$("#hh").click(function(){ $.helpme.hide(); $("#hm").show(); $(this).hide(); });
 		});
 	</script>
 </head>
@@ -22,6 +23,9 @@
 
 <p class='n2'>urabitur rutrum lobortis augue id aliquet. Mauris elementum nisi leo. Cras augue erat, accumsan ac convallis et, viverra non risus. Integer tincidunt tincidunt nisi, fermentum cursus leo aliquam porttitor. Quisque et lacinia ante. Suspendisse auctor suscipit turpis non lacinia. Quisque congue, lectus non semper suscipit, urna nisi vestibulum ipsum, nec dignissim elit lorem sed felis. Cras malesuada pellentesque arcu in scelerisque. Donec orci nunc, iaculis vel dictum eu, suscipit iaculis augue. Praesent luctus, neque non rutrum ullamcorper, nisl felis luctus magna, vel ornare mi nisl sit amet ligula. In hac habitasse platea dictumst. Proin sed neque diam, ut faucibus risus. Donec at porttitor lacus. Donec tortor augue, malesuada quis vulputate eu, placerat et mi.</p>
 
-<p>uis enim diam, ornare eget tristique porta, pulvinar id massa. Mauris fringilla egestas faucibus. Vestibulum ultricies ligula in libero porttitor ac aliquet tortor molestie. Phasellus ut metus a arcu porta porttitor. Sed vitae dolor ipsum, eget ultricies felis. Nam viverra tellus nec mi lacinia sit amet scelerisque metus facilisis. Nulla erat sem, ultrices <span class='in'>in</span> blandit ut, faucibus vel dolor. Nunc rhoncus ultricies orci quis malesuada. Nunc suscipit risus at sem convallis id pulvinar sapien rutrum. Cras cursus convallis orci, eget dignissim massa viverra vitae. Nam lacinia massa sed tortor fringilla eget mollis diam tempor. Aliquam volutpat odio eu ipsum mattis consectetur. Aenean posuere justo dignissim nunc porta iaculis. Etiam a massa quis lectus bibendum scelerisque vulputate ut nisi. Integer viverra turpis nec leo venenatis <span class="n4">commodo</span>.</p>
+<p>uis enim diam, ornare eget tristique porta, pulvinar id massa. Mauris fringilla egestas faucibus. Vestibulum ultricies ligula in libero porttitor ac aliquet tortor molestie. Phasellus ut metus a arcu porta porttitor. Sed vitae dolor ipsum, eget ultricies felis. Nam viverra tellus nec mi lacinia sit amet scelerisque metus facilisis. Nulla erat sem, ultrices <span class='in'>in</span> blandit ut, faucibus vel dolor. Nunc rhoncus ultricies orci quis malesuada. Nunc suscipit risus at sem convallis id pulvinar sapien rutrum. Cras cursus convallis orci, eget dignissim massa viverra vitae. Nam lacinia massa sed tortor fringilla eget mollis diam tempor. Aliquam volutpat odio eu ipsum mattis consectetur. Aenean posuere justo dignissim nunc porta iaculis. Etiam a massa quis lectus bibendum scelerisque vulputate ut nisi. Integer viverra turpis nec leo venenatis <span class="n5">commodo</span>.</p>
+<br/><br/><br/><br/>
+<p class="abs"><span class="n4">whoa</span></p>
+<a href="#" id="hm">Help me</a><a href="#" id="hh">Hide Help</a>
 </body>
 </html>
